@@ -4,12 +4,12 @@ This is an MVP app made to query the Github Jobs API and return those results to
 
 To start this project up locally, clone the repo and set the database up
 
-`git clone https://github.com/TimBek2/github_api_scraper.git`
-`cd github_api_scraper`
-`bundle install`
-`rails db:create`
-`rails db:migrate`
-`rails s`
+```git clone https://github.com/TimBek2/github_api_scraper.git
+cd github_api_scraper
+bundle install
+rails db:create
+rails db:migrate
+rails s```
 
 Then navigate your browser to localhost:3000. Go ahead and put a search term and/or location into the search form and you'll be shown the results of your search below!
 
