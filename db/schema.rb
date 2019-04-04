@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_04_004233) do
+ActiveRecord::Schema.define(version: 2019_04_04_005009) do
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "type"
+    t.text "url"
+    t.datetime "created_at", null: false
+    t.string "company"
+    t.string "location"
+    t.text "description"
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "github_username"
