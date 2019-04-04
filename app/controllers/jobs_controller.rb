@@ -3,7 +3,7 @@ class JobsController < ApplicationController
     description = search_params['description'].gsub(' ', '+')
     location = search_params['location'].gsub(' ', '+')
 
-    if description == ''
+    if description == '' && location == ''
       flash.alert = 'You need to input a search query!'
       redirect_to root_url and return
     end
