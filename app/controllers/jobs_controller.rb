@@ -3,7 +3,13 @@ class JobsController < ApplicationController
     description = search_params['description'].gsub(' ', '+')
     location = search_params['location'].gsub(' ', '+')
 
-    url = "https://jobs.github.com/positions.json?description=#{description}&location=#{location}"
+    if description == ''
+      flash.alert = 'You need to input a search query!'
+      redirect_to root_url and return
+    end
+
+    url = "https://jobs.github.com/positions.json?description=#{description}"
+    url += "&location=#{location}" if location != ''
     url += '?full_time=true' if search_params['full_time'] == 1
 
     response = HTTParty.get(url)
