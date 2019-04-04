@@ -1,7 +1,9 @@
-<h4><%= @job.title %></h4>
-<p><%= sanitize @job.description %></p>
-<p><%= @job.company %> | <%= @job.location %></p>
-<p><%= @job.job_type %></p>
+<div>
+  <h4><%= @job.title %></h4>
+  <p><%= sanitize @job.description %></p>
+  <p><%= @job.company %> | <%= @job.location %></p>
+  <p><%= @job.job_type %></p>
 
 
-<%= link_to 'Post URL', @job.url %>
+  <%= link_to 'Post URL', @job.url %>
+</div>

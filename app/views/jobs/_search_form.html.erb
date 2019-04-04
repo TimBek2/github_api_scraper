@@ -1,15 +1,25 @@
 <%= form_for("search", :url => search_jobs_path) do |f| %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+  <div>
+    <%= f.label :description, 'Search terms' %>
+    <%= f.text_field :description %>
+  </div>
 
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
 
-  <%= f.label :full_time, 'Full time only?'%>
-  <%= f.check_box :full_time %>
+  <div>
+    <%= f.label :full_time, 'Full time only?'%>
+    <%= f.check_box :full_time %>
+  </div>
 
   <%= f.submit 'Search' %>
 
-  <%= link_to 'Show Full History', show_all_jobs_url %>
-  <%= link_to 'Clear All Results', clear_jobs_url %>
+  <div>
+    <%= link_to 'Show Full History', show_all_jobs_url %>
+  </div>
+  <div>
+    <%= link_to 'Clear All Results', clear_jobs_url %>
+  </div>
 <% end %>

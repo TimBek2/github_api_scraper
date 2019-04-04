@@ -2,11 +2,13 @@
   <h4>Search Results</h4>
 
   <% @jobs.each do |job| %>
-    <h4><%= job.title %></h4>
-    <p><%= (sanitize job.description.slice(0, 175) + '...') %></p>
-    <p><%= job.company %> <%= job.location %></p>
-    <p><%= job.job_type %></p>
+    <div class="job-wrapper">
+      <h4><%= job.title %></h4>
+      <p><%= (sanitize job.description.slice(0, 175) + '...') %></p>
+      <p><%= job.company %> <%= job.location %></p>
+      <p><%= job.job_type %></p>
 
-    <%= link_to 'Read more', job %>
+      <%= link_to 'Read more', job %>
+    </div>
   <% end %>
 <% end %>
