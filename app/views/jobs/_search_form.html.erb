@@ -1,0 +1,12 @@
+<%= form_for("search", :url => search_jobs_path) do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :full_time, 'Full time only?'%>
+  <%= f.check_box :full_time %>
+
+  <%= f.submit 'Search' %>
+<% end %>
