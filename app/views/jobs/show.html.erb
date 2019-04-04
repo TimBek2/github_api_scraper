@@ -1,0 +1,7 @@
+<h4><%= @job.title %></h4>
+<p><%= sanitize @job.description %></p>
+<p><%= @job.company %> | <%= @job.location %></p>
+<p><%= @job.job_type %></p>
+
+
+<%= link_to 'Post URL', @job.url %>

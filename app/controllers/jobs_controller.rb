@@ -14,19 +14,36 @@ class JobsController < ApplicationController
       redirect_to root_url and return
     end
 
-    body.each do |posting|
+    @jobs = body.map do |posting|
       job = Job.create!({
         job_type: posting['type'],
         url: posting['url'],
         posted_on: posting['created_at'],
         company: posting['company'],
         location: posting['location'],
-        description: posting['description']
+        description: posting['description'],
+        title: posting['title']
       })
     end
 
     render "home/index"
   end
+
+  def delete_all
+    Job.delete_all
+    flash[:notice] = 'All jobs cleared!'
+    redirect_to root_url
+  end
+
+  def show_all
+    @jobs = Job.all
+    redirect_to root_url
+  end
+
+  def show
+    @job = Job.find(params[:id])
+  end
+
 
   private
 
